@@ -1,0 +1,36 @@
+/* Peyton Gardner */
+/* styles.css */
+
+#body {
+    background-color: rgb(135, 207, 235);
+}
+
+#toggle-menu-button {
+    background-color: #9E58CC;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius:6px;
+}
+
+.button {
+    visibility: hidden;
+    background-color: #4287F5;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius:6px;
+}
+
+#keybind-list {
+    visibility: hidden;
+    position: absolute;
+}
