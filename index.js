@@ -9,6 +9,8 @@ let changeViewButton = document.getElementById("change-view-button");
 let toggleTexturesButton = document.getElementById("toggle-textures-button");
 let spinForwardButton = document.getElementById("spin-forward-button");
 let spinBackwardButton = document.getElementById("spin-backward-button");
+let spinUpwardButton = document.getElementById("spin-upward-button");
+let spinDownwardButton = document.getElementById("spin-downward-button");
 let jumpButton = document.getElementById("jump-button");
 let showKeybindsButton = document.getElementById("show-keybinds-button");
 
@@ -26,6 +28,8 @@ toggleMenuButton.addEventListener("click", function() {
         toggleTexturesButton.style.visibility = "hidden";
         spinForwardButton.style.visibility = "hidden";
         spinBackwardButton.style.visibility = "hidden";
+        spinUpwardButton.style.visibility = "hidden";
+        spinDownwardButton.style.visibility = "hidden";
         jumpButton.style.visibility = "hidden";
         showKeybindsButton.style.visibility = "hidden";
         keybindList.style.visibility = "hidden";
@@ -35,6 +39,8 @@ toggleMenuButton.addEventListener("click", function() {
         toggleTexturesButton.style.visibility = "visible";
         spinForwardButton.style.visibility = "visible";
         spinBackwardButton.style.visibility = "visible";
+        spinUpwardButton.style.visibility = "visible";
+        spinDownwardButton.style.visibility = "visible";
         jumpButton.style.visibility = "visible";
         showKeybindsButton.style.visibility = "visible";
         menu = true;

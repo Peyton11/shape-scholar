@@ -38,11 +38,15 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+let cube = createCube();
+scene.add(cube);
+renderer.render(scene, camera);
+
 // Shape flags
 let shapeFlags = {
 
     // Basic 3D shapes
-    isCubeActive: false,
+    isCubeActive: true,
     isSphereActive: false,
     isCylinderActive: false,
     isConeActive: false,
@@ -73,9 +77,26 @@ let shapeFlags = {
     isSpiralActive: false
 }
 
+// Flags to control states
+let spinningForward = false;
+let spinningBackward = false;
+let spinningUpward = false;
+let spinningDownward = false;
+
 // Animation loop
 function animate() {
-    console.log("TODO");
+
+    if (spinningForward) {
+        cube.rotation.y += 0.01;
+    } else if (spinningBackward) {
+        cube.rotation.y -= 0.01
+    } else if (spinningUpward) {
+        cube.rotation.x -= 0.01;
+    } else if (spinningDownward) {
+        cube.rotation.x += 0.01;
+    }
+
+    renderer.render(scene, camera);
 }
 
 // View flag
@@ -110,7 +131,7 @@ changeViewButton.addEventListener("click", function() {
     }
 })
 
-// Handle "Ctrl + v" key bind
+// Handle "Ctrl + v" key bind to change view
 document.addEventListener("keydown", function(event) {
 
     if (event.ctrlKey && (event.key === 'v' || event.key === 'V')) {
@@ -140,3 +161,136 @@ document.addEventListener("keydown", function(event) {
         }
     }
 })
+
+// Add event listener to control spinning using WASD
+document.addEventListener("keydown", function(event) {
+
+    // Start spin forward when 'd' is pressed
+    if (event.key === 'd' || event.key === 'D') {
+        spinningForward = true;
+        spinningBackward = false;
+        spinningUpward = false;
+        spinningDownward = false;
+        console.log("'s' key was pressed down");
+    }
+    // Start spin backward when 'a' is pressed
+    else if (event.key === 'a' || event.key === 'A') {
+        spinningForward = false;
+        spinningBackward = true;
+        spinningUpward = false;
+        spinningDownward = false;
+        console.log("'a' key was pressed down");
+    }
+    // Start spin upward when 'w' is pressed
+    else if (event.key === 'w' || event.key === 'W') {
+        spinningForward = false;
+        spinningBackward = false;
+        spinningUpward = true;
+        spinningDownward = false;
+        console.log("'w' key was pressed down");
+    }
+    // Start spin backward when 's' is pressed
+    else if (event.key === 's' || event.key === 'S') {
+        spinningForward = false;
+        spinningBackward = false;
+        spinningUpward = false;
+        spinningDownward = true;
+        console.log("'s' key was pressed down");
+    }
+});
+
+// Stop spinning when WASD is released
+document.addEventListener("keyup", function(event) {
+
+    if (event.key === 'd' || event.key === 'D') {
+        spinningForward = false;
+        console.log("Spin forward stopped");
+    } else if (event.key === 'a' || event.key === 'A') {
+        spinningBackward = false;
+        console.log("Spin backward stopped");
+    } else if (event.key === 'w' || event.key === 'W') {
+        spinningUpward = false;
+        console.log("Spin upward stopped");
+    } else if (event.key === 's' || event.key === 'S') {
+        spinningDownward = false;
+        console.log("Spin downward stopped");
+    }
+});
+
+// Handle "Spin Forward" button
+let spinForwardButton = document.getElementById("spin-forward-button");
+spinForwardButton.addEventListener("click", function() {
+
+    console.log("\"Spin Forward\" button was clicked");
+
+    if (spinningForward === false)
+        spinningForward = true;
+    else
+        spinningForward = false;
+
+    // Stop other spin animations
+    if (spinningBackward === true || spinningUpward === true || spinningDownward === true) {
+        spinningBackward = false;
+        spinningUpward = false;
+        spinningDownward = false;
+    }
+})
+
+// Handle "Spin Backward" button
+let spinBackwardButton = document.getElementById("spin-backward-button");
+spinBackwardButton.addEventListener("click", function() {
+
+    console.log("\"Spin Backward\" button was clicked");
+
+    if (spinningBackward === false)
+        spinningBackward = true;
+    else
+        spinningBackward = false;
+
+    // Stop other spin animations
+    if (spinningForward === true || spinningUpward === true || spinningDownward === true) {
+        spinningForward = false;
+        spinningUpward = false;
+        spinningDownward = false;
+    }
+})
+
+// Handle "Spin Upward" button
+let spinUpwardButton = document.getElementById("spin-upward-button");
+spinUpwardButton.addEventListener("click", function() {
+
+    console.log("\"Spin Upward\" button was clicked");
+
+    if (spinningUpward === false)
+        spinningUpward = true;
+    else
+        spinningUpward = false;
+
+    // Stop other spin animations
+    if (spinningForward === true || spinningBackward === true || spinningDownward === true) {
+        spinningForward = false;
+        spinningBackward = false;
+        spinningDownward = false;
+    }
+})
+
+// Handle "Spin Downward" button
+let spinDownwardButton = document.getElementById("spin-downward-button");
+spinDownwardButton.addEventListener("click", function() {
+
+    console.log("\"Spin Downward\" button was clicked");
+
+    if (spinningDownward === false)
+        spinningDownward = true;
+    else
+        spinningDownward = false;
+
+    // Stop other spin animations
+    if (spinningForward === true || spinningBackward === true || spinningUpward === true) {
+        spinningForward = false;
+        spinningBackward = false;
+        spinningUpward = false;
+    }
+})
+
+renderer.setAnimationLoop(animate);
