@@ -9,7 +9,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 export function createCube() {
     let geometry = new THREE.BoxGeometry(2, 2, 2);
-    let material = new THREE.MeshStandardMaterial({color: 0x000ff});
+    let material = new THREE.MeshStandardMaterial({color: 0x808080});
     let cube = new THREE.Mesh(geometry, material);
     return cube;
 }

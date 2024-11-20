@@ -6,6 +6,7 @@ let menu = false;
 
 // Get button ids
 let changeViewButton = document.getElementById("change-view-button");
+let toggleShadingButton = document.getElementById("toggle-shading-button");
 let toggleTexturesButton = document.getElementById("toggle-textures-button");
 let spinForwardButton = document.getElementById("spin-forward-button");
 let spinBackwardButton = document.getElementById("spin-backward-button");
@@ -24,6 +25,7 @@ toggleMenuButton.addEventListener("click", function() {
 
     if (menu === true) {
         changeViewButton.style.visibility = "hidden";
+        toggleShadingButton.style.visibility = "hidden";
         toggleTexturesButton.style.visibility = "hidden";
         spinForwardButton.style.visibility = "hidden";
         spinBackwardButton.style.visibility = "hidden";
@@ -34,6 +36,7 @@ toggleMenuButton.addEventListener("click", function() {
         menu = false;
     } else {
         changeViewButton.style.visibility = "visible";
+        toggleShadingButton.style.visibility = "visible";
         toggleTexturesButton.style.visibility = "visible";
         spinForwardButton.style.visibility = "visible";
         spinBackwardButton.style.visibility = "visible";

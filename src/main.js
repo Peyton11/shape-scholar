@@ -8,7 +8,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 import { createCube } from "./shapes/cube.js";
-import { setAllFalse } from "./utils.js";
+import { setAllFalse, enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
 let scene = new THREE.Scene();
@@ -41,6 +41,9 @@ document.body.appendChild(renderer.domElement);
 let cube = createCube();
 scene.add(cube);
 renderer.render(scene, camera);
+
+// Active shape
+let activeShape = cube;
 
 // Shape flags
 let shapeFlags = {
@@ -87,13 +90,13 @@ let spinningDownward = false;
 function animate() {
 
     if (spinningForward) {
-        cube.rotation.y += 0.01;
+        activeShape.rotation.y += 0.01;
     } else if (spinningBackward) {
-        cube.rotation.y -= 0.01
+        activeShape.rotation.y -= 0.01
     } else if (spinningUpward) {
-        cube.rotation.x -= 0.01;
+        activeShape.rotation.x -= 0.01;
     } else if (spinningDownward) {
-        cube.rotation.x += 0.01;
+        activeShape.rotation.x += 0.01;
     }
 
     renderer.render(scene, camera);
@@ -159,6 +162,46 @@ document.addEventListener("keydown", function(event) {
             camera.lookAt(0, 0, 0);
             renderer.render(scene, camera);
         }
+    }
+})
+
+// Shading flag
+let shading = false;
+
+// Handle "Toggle Shading" Button
+let toggleShadingButton = document.getElementById("toggle-shading-button");
+toggleShadingButton.addEventListener("click", function() {
+
+    console.log("\"Toggle Shading\" button was clicked");
+    console.log("Shading toggled");
+
+    if (shading === true) {
+        shading = false;
+        disablePhongShading(activeShape);
+    } else {
+        shading = true;
+        enablePhongShading(activeShape);
+    }
+    renderer.render(scene, camera);
+})
+
+// Handle "Ctrl + X" key bind to toggle shading
+document.addEventListener("keydown", function(event) {
+
+    if (event.ctrlKey && (event.key === 'x' || event.key === 'X')) {
+        event.preventDefault();
+        console.log("\"Ctrl + x\" was pressed");
+        console.log("Textures toggled");
+
+        // Switch to untextured robot
+        if (shading === true) {
+            shading = false;
+            disablePhongShading(activeShape);
+        } else {
+            shading = true;
+            enablePhongShading(activeShape);
+        }
+        renderer.render(scene, camera);
     }
 })
 
