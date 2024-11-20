@@ -45,41 +45,6 @@ renderer.render(scene, camera);
 // Active shape
 let activeShape = cube;
 
-// Shape flags
-let shapeFlags = {
-
-    // Basic 3D shapes
-    isCubeActive: true,
-    isSphereActive: false,
-    isCylinderActive: false,
-    isConeActive: false,
-    isRectangularPrismActive: false,
-    isPyramidActive: false,
-
-    // Intermediate shapes
-    isTriangularPrismActive: false,
-    isHexagonalPrismActive: false,
-    isPentagonalPrismActive: false,
-    isEllipsoidActive: false,
-    isTorusActive: false,
-    isOctahedronActive: false,
-    isTetrahedronActive: false,
-
-    // Advanced or composite shapes
-    isDodecahedronActive: false,
-    isIcosahedronActive: false,
-    isFrustrumActive: false,
-    isBipyramidActive: false,
-    isCupolaActive: false,
-    isAntiprismActive: false,
-
-    // Custom creative shapes
-    isStarActive: false,
-    isHeartActive: false,
-    isCrescentActive: false,
-    isSpiralActive: false
-}
-
 // Flags to control states
 let spinningForward = false;
 let spinningBackward = false;
