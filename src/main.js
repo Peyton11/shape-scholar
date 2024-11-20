@@ -1,5 +1,5 @@
 // Peyton Gardner
-// main.js
+// src/main.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';
@@ -8,6 +8,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 import { createCube } from "./shapes/cube.js";
+import { setAllFalse } from "./utils.js";
 
 // Create the scene
 let scene = new THREE.Scene();
@@ -38,36 +39,39 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 // Shape flags
-// Basic 3D shapes
-let isCubeActive = false;
-let isSphereActive = false;
-let isCylinderActive = false;
-let isConeActive = false;
-let isRectangularPrismActive = false;
-let isPyramidActive = false;
+let shapeFlags = {
 
-// Intermediate shapes
-let isTriangularPrismActive = false;
-let isHexagonalPrismActive = false;
-let isPentagonalPrismActive = false;
-let isEllipsoidActive = false;
-let isTorusActive = false;
-let isOctahedronActive = false;
-let isTetrahedronActive = false;
+    // Basic 3D shapes
+    isCubeActive: false,
+    isSphereActive: false,
+    isCylinderActive: false,
+    isConeActive: false,
+    isRectangularPrismActive: false,
+    isPyramidActive: false,
 
-// Advanced or composite shapes
-let isDodecahedronActive = false;
-let isIcosahedronActive = false;
-let isFrustrumActive = false;
-let isBipyramidActive = false;
-let isCupolaActive = false;
-let isAntiprismActive = false;
+    // Intermediate shapes
+    isTriangularPrismActive: false,
+    isHexagonalPrismActive: false,
+    isPentagonalPrismActive: false,
+    isEllipsoidActive: false,
+    isTorusActive: false,
+    isOctahedronActive: false,
+    isTetrahedronActive: false,
 
-// Custom creative shapes
-let isStarActive = false;
-let isHeartActive = false;
-let isCrescentActive = false;
-let isSpiralActive = false;
+    // Advanced or composite shapes
+    isDodecahedronActive: false,
+    isIcosahedronActive: false,
+    isFrustrumActive: false,
+    isBipyramidActive: false,
+    isCupolaActive: false,
+    isAntiprismActive: false,
+
+    // Custom creative shapes
+    isStarActive: false,
+    isHeartActive: false,
+    isCrescentActive: false,
+    isSpiralActive: false
+}
 
 // Animation loop
 function animate() {
