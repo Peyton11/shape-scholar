@@ -77,3 +77,66 @@ let shapeFlags = {
 function animate() {
     console.log("TODO");
 }
+
+// View flag
+let view = "standard";
+
+// Handle "Change View" Button
+let changeViewButton = document.getElementById("change-view-button");
+changeViewButton.addEventListener("click", function() {
+
+    console.log("\"Change View\" button was pressed");
+
+    // Change to isometric view
+    if (view === "standard") {
+        view = "isometric";
+        console.log("Changed to Isometric view");
+        const distance = 8;
+        camera.position.x = distance * Math.cos(Math.PI / 4);
+        camera.position.y = distance;
+        camera.position.z = distance * Math.sin(Math.PI / 4);
+        camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+
+        // Change to standard view
+    } else if (view === "isometric") {
+        view = "standard";
+        console.log("Changed to Standard view");
+        camera.position.x = 0;
+        camera.position.y = 2;
+        camera.position.z = 10;
+        camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+    }
+})
+
+// Handle "Ctrl + v" key bind
+document.addEventListener("keydown", function(event) {
+
+    if (event.ctrlKey && (event.key === 'v' || event.key === 'V')) {
+        event.preventDefault();
+        console.log("\"Ctrl + v\" was pressed");
+
+        // Change to isometric view
+        if (view === "standard") {
+            view = "isometric";
+            console.log("Changed to Isometric view");
+            const distance = 8;
+            camera.position.x = distance * Math.cos(Math.PI / 4);
+            camera.position.y = distance;
+            camera.position.z = distance * Math.sin(Math.PI / 4);
+            camera.lookAt(0, 0, 0);
+            renderer.render(scene, camera);
+
+            // Change to standard view
+        } else if (view === "isometric") {
+            view = "standard";
+            console.log("Changed to Standard view");
+            camera.position.x = 0;
+            camera.position.y = 2;
+            camera.position.z = 10;
+            camera.lookAt(0, 0, 0);
+            renderer.render(scene, camera);
+        }
+    }
+})
