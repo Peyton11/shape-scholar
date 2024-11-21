@@ -8,6 +8,7 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 import { createCube } from "./shapes/cube.js";
+import { createSphere } from "./shapes/sphere.js";
 import { setAllFalse, enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -38,12 +39,14 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+// Create each shape
 let cube = createCube();
-scene.add(cube);
+let sphere = createSphere();
+
+let activeShape = cube;
+scene.add(activeShape);
 renderer.render(scene, camera);
 
-// Active shape
-let activeShape = cube;
 
 // Flags to control states
 let spinningForward = false;
