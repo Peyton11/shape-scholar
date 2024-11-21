@@ -1,6 +1,9 @@
 // Peyton Gardner
 // index.js
 
+// Control current shape heading
+let currentShape = document.getElementById("current-shape-heading");
+
 // Flag to toggle menu
 let menu = false;
 
