@@ -10,6 +10,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 import { createCube } from "./shapes/cube.js";
 import { createSphere } from "./shapes/sphere.js";
 import { createCylinder } from "./shapes/cylinder.js";
+import { createCone } from "./shapes/cone.js"
 import { setAllFalse, enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -44,6 +45,7 @@ document.body.appendChild(renderer.domElement);
 let cube = createCube();
 let sphere = createSphere();
 let cylinder = createCylinder();
+let cone = createCone();
 
 // Only one shape is allowed at once
 let activeShape = cube;
