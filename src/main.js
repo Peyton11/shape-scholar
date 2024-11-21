@@ -13,6 +13,7 @@ import { createCylinder } from "./shapes/cylinder.js";
 import { createCone } from "./shapes/cone.js"
 import { createRectangularPrism } from "./shapes/rectangular-prism.js";
 import { createPyramid } from "./shapes/pyramid.js";
+import { createHeart } from "./shapes/heart.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -50,6 +51,7 @@ let cylinder = createCylinder();
 let cone = createCone();
 let rectangularPrism = createRectangularPrism();
 let pyramid = createPyramid();
+let heart = createHeart();
 
 // Only one shape is allowed at once
 let activeShape = cube;
