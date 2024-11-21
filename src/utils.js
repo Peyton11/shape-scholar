@@ -7,14 +7,6 @@
 // Uncomment the following line for production. This is required to view in browsers:
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
-// Toggles all values in an object to false
-export function setAllFalse(object) {
-
-    for (let key in object) {
-        object[key] = false;
-    }
-}
-
 // Enable Phong shading
 export function enablePhongShading(activeShape) {
     activeShape.material = new THREE.MeshPhongMaterial({color: 0x808080, shininess: 100, specular: 0xFFFFFF});

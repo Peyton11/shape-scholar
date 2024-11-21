@@ -11,7 +11,7 @@ import { createCube } from "./shapes/cube.js";
 import { createSphere } from "./shapes/sphere.js";
 import { createCylinder } from "./shapes/cylinder.js";
 import { createCone } from "./shapes/cone.js"
-import { setAllFalse, enablePhongShading, disablePhongShading } from "./utils.js";
+import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
 let scene = new THREE.Scene();
