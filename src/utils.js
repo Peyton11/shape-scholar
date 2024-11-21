@@ -9,10 +9,10 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 // Enable Phong shading
 export function enablePhongShading(activeShape) {
-    activeShape.material = new THREE.MeshPhongMaterial({color: 0x808080, shininess: 100, specular: 0xFFFFFF});
+    activeShape.material = new THREE.MeshPhongMaterial({color: 0x808080, shininess: 100, specular: 0xFFFFFF, flatShading: true, side: THREE.DoubleSide});
 }
 
 // Disable Phong shading
 export function disablePhongShading(activeShape) {
-    activeShape.material = new THREE.MeshStandardMaterial({color: 0x808080});
+    activeShape.material = new THREE.MeshStandardMaterial({color: 0x808080, flatShading: true, side: THREE.DoubleSide});
 }
