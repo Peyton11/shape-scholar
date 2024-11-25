@@ -12,7 +12,7 @@ export function createTriangularPrism() {
     const radius = 1;
     const height = 2;
 
-    const geometry = new THREE.CylinderGeometry(radius, radius, height, 3); // 6 sides for hexagonal shape
+    const geometry = new THREE.CylinderGeometry(radius, radius, height, 3);
     const material = new THREE.MeshBasicMaterial({ color: 0x808080});
     const triangularPrism = new THREE.Mesh(geometry, material);
 
