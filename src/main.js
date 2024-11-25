@@ -28,6 +28,7 @@ import { createTetrahedron } from "./shapes/tetrahedron.js";
 import { createDodecahedron} from "./shapes/dodecahedron.js";
 import { createIcosahedron } from "./shapes/icosahedron.js";
 import { createFrustrum } from "./shapes/frustrum.js";
+import { createHexagonalAntiprism } from "./shapes/hexagonal-antiprism.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -80,6 +81,7 @@ let tetrahedron = createTetrahedron();
 let dodecahedron = createDodecahedron();
 let icosahedron = createIcosahedron();
 let frustrum = createFrustrum();
+let hexagonalAntiprism = createHexagonalAntiprism();
 
 // Only one shape is allowed at once
 let activeShape = cube;
@@ -365,7 +367,7 @@ const shapeMapping = {
     "dodecahedron": dodecahedron,
     "icosahedron-button": icosahedron,
     "frustrum-button": frustrum,
-    "antiprism-button": "antiprism",
+    "hexagonal-antiprism-button": hexagonalAntiprism,
     "star-button": star,
     "heart-button": heart,
 };
@@ -391,7 +393,7 @@ const shapeMappingHeading = {
     "dodecahedron": "Dodecahedron",
     "icosahedron-button": "Icosahedron",
     "frustrum-button": "Frustrum",
-    "antiprism-button": "Antiprism",
+    "hexagonal-antiprism-button": "Hexagonal Antiprism",
     "star-button": "Star",
     "heart-button": "Heart",
 };
