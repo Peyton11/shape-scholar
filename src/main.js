@@ -85,6 +85,7 @@ let hexagonalAntiprism = createHexagonalAntiprism();
 
 // Only one shape is allowed at once
 let activeShape = cube;
+enablePhongShading(activeShape);
 scene.add(activeShape);
 renderer.render(scene, camera);
 
@@ -424,6 +425,7 @@ shapeButtons.forEach((shapeButton) => {
             scene.remove(activeShape);
         }
         activeShape = newShape;
+        enablePhongShading(activeShape);
         scene.add(activeShape);
 
         renderer.render(scene, camera);
