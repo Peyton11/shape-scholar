@@ -9,7 +9,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 export function createDodecahedron() {
 
-    const radius = 2;
+    const radius = 2.5;
 
     // Create dodecahedron geometry with a specified radius
     const geometry = new THREE.DodecahedronGeometry(radius);

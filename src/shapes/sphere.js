@@ -8,8 +8,9 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 export function createSphere() {
-    let geometry = new THREE.SphereGeometry(1.5);
+    let geometry = new THREE.SphereGeometry(2);
     let material = new THREE.MeshStandardMaterial({color: 0x808080});
     let sphere = new THREE.Mesh(geometry, material);
+
     return sphere
 }

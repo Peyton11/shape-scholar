@@ -9,8 +9,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 export function createTriangularPrism() {
 
-    const radius = 1;
-    const height = 2;
+    const radius = 3;
+    const height = 3;
 
     const geometry = new THREE.CylinderGeometry(radius, radius, height, 3);
     const material = new THREE.MeshBasicMaterial({ color: 0x808080});

@@ -8,8 +8,8 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 export function createNonagonalPrism() {
-    const radius = 1;
-    const height = 2;
+    const radius = 2;
+    const height = 3;
 
     const geometry = new THREE.CylinderGeometry(radius, radius, height, 9);
     const material = new THREE.MeshBasicMaterial({ color: 0x808080});

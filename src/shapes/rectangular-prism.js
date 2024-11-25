@@ -8,8 +8,10 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 export function createRectangularPrism() {
-    let geometry = new THREE.BoxGeometry(4, 2, 2);
+
+    let geometry = new THREE.BoxGeometry(5, 3, 3);
     let material = new THREE.MeshStandardMaterial({color: 0x808080});
     let rectangularPrism = new THREE.Mesh(geometry, material);
+
     return rectangularPrism;
 }

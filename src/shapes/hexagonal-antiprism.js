@@ -9,8 +9,8 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 export function createHexagonalAntiprism() {
 
-    const radius = 2;
-    const height = 2;
+    const radius = 3;
+    const height = 3;
 
     const geometry = new THREE.BufferGeometry();
 

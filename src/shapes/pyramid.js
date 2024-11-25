@@ -10,7 +10,7 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 export function createPyramid() {
 
     const baseSize = 2;
-    const height = 4;
+    const height = 5;
 
     // Create an array to hold the vertices of the pyramid
     const vertices = [
@@ -52,6 +52,8 @@ export function createPyramid() {
     // Create the material and mesh
     const material = new THREE.MeshStandardMaterial({color: 0x808080, flatShading: true, side: THREE.DoubleSide});
     const pyramid = new THREE.Mesh(geometry, material);
+
+    pyramid.position.set(0, -2, 0);
 
     return pyramid;
 }

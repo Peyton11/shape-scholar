@@ -51,7 +51,7 @@ export function createStar() {
     // Create a mesh with the geometry and material
     let star = new THREE.Mesh(geometry, material);
 
-    star.scale.set(1.5, 1.5, 1.5);
+    star.scale.set(2, 2, 2);
 
     return star;
 }

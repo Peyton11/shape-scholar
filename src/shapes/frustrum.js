@@ -9,10 +9,10 @@ import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.m
 
 export function createFrustrum() {
 
-    const topRadius = 1;
-    const bottomRadius = 2;
-    const height = 2;
-    const radialSegments = 100;
+    const topRadius = 1.5;
+    const bottomRadius = 3;
+    const height = 3;
+    const radialSegments = 1000;
 
     // Create the frustum by using two cones with top and bottom radii
     const geometry = new THREE.CylinderGeometry(topRadius, bottomRadius, height, radialSegments, 1, false);

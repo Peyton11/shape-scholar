@@ -8,8 +8,10 @@
 import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js';
 
 export function createCylinder() {
-    let geometry = new THREE.CylinderGeometry(1, 1, 2);
+
+    let geometry = new THREE.CylinderGeometry(1.5, 1.5, 4);
     let material = new THREE.MeshStandardMaterial({color: 0x808080});
     let cylinder = new THREE.Mesh(geometry, material);
+
     return cylinder;
 }
