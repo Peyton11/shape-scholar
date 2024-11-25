@@ -15,6 +15,7 @@ import { createRectangularPrism } from "./shapes/rectangular-prism.js";
 import { createPyramid } from "./shapes/pyramid.js";
 import { createHeart } from "./shapes/heart.js";
 import { createStar } from "./shapes/star.js";
+import { createTriangularPrism } from "./shapes/triangular-prism.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -54,6 +55,7 @@ let rectangularPrism = createRectangularPrism();
 let pyramid = createPyramid();
 let heart = createHeart();
 let star = createStar();
+let triangularPrism = createTriangularPrism();
 
 // Only one shape is allowed at once
 let activeShape = cube;
@@ -326,7 +328,7 @@ const shapeMapping = {
     "cone-button": cone,
     "rectangular-prism-button": rectangularPrism,
     "pyramid-button": pyramid,
-    "triangular-prism-button": "triangularPrism",
+    "triangular-prism-button": triangularPrism,
     "hexagonal-prism-button": "hexagonalPrism",
     "pentagonal-prism-button": "pentagonalPrism",
     "ellipsoid-button": "ellipsoid",
