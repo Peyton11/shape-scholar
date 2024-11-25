@@ -23,6 +23,7 @@ import { createOctagonalPrism } from "./shapes/octagonal-prism.js";
 import { createNonagonalPrism } from "./shapes/nonagonal-prism.js";
 import { createEllipsoid } from "./shapes/ellipsoid.js";
 import { createTorus } from "./shapes/torus.js";
+import { createOctahedron } from "./shapes/octahedron.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -70,6 +71,7 @@ let octagonalPrism = createOctagonalPrism();
 let nonagonalPrism = createNonagonalPrism();
 let ellipsoid = createEllipsoid();
 let torus = createTorus();
+let octahedron = createOctahedron();
 
 // Only one shape is allowed at once
 let activeShape = cube;
@@ -350,12 +352,11 @@ const shapeMapping = {
     "nonagonal-prism-button": nonagonalPrism,
     "ellipsoid-button": ellipsoid,
     "torus-button": torus,
-    "octahedron-button": "octahedron",
+    "octahedron-button": octahedron,
     "tetrahedron-button": "tetrahedron",
     "dodecahedron": "dodecahedron",
     "icosahedron-button": "icosahedron",
     "frustrum-button": "frustrum",
-    "bipyramid-button": "bipyramid",
     "antiprism-button": "antiprism",
     "star-button": star,
     "heart-button": heart,
@@ -382,7 +383,6 @@ const shapeMappingHeading = {
     "dodecahedron": "Dodecahedron",
     "icosahedron-button": "Icosahedron",
     "frustrum-button": "Frustrum",
-    "bipyramid-button": "Bipyramid",
     "antiprism-button": "Antiprism",
     "star-button": "Star",
     "heart-button": "Heart",
