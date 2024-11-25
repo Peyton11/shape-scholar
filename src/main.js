@@ -20,7 +20,7 @@ import { enablePhongShading, disablePhongShading } from "./utils.js";
 let scene = new THREE.Scene();
 
 // Background
-scene.background = new THREE.Color(0.53, 0.81, 0.92);
+scene.background = new THREE.Color("#87CFEB");
 
 // Directional light
 const light = new THREE.DirectionalLight(0xFFFFFF, 1);
@@ -315,3 +315,87 @@ spinDownwardButton.addEventListener("click", function() {
 })
 
 renderer.setAnimationLoop(animate);
+
+// Map shape-button IDs for activeShape
+const shapeMapping = {
+    "cube-button": cube,
+    "sphere-button": sphere,
+    "cylinder-button": cylinder,
+    "cone-button": cone,
+    "rectangular-prism-button": rectangularPrism,
+    "pyramid-button": pyramid,
+    "triangular-prism-button": "triangularPrism",
+    "hexagonal-prism-button": "hexagonalPrism",
+    "pentagonal-prism-button": "pentagonalPrism",
+    "ellipsoid-button": "ellipsoid",
+    "torus-button": "torus",
+    "octahedron-button": "octahedron",
+    "tetrahedron-button": "tetrahedron",
+    "dodecahedron": "dodecahedron",
+    "icosahedron-button": "icosahedron",
+    "frustrum-button": "frustrum",
+    "bipyramid-button": "bipyramid",
+    "antiprism-button": "antiprism",
+    "star-button": "star",
+    "heart-button": heart,
+    "crescent-button": "crescent",
+    "spiral-button": "spiral",
+};
+
+// Map shape-button IDs to modify #current-shape-heading
+const shapeMappingHeading = {
+    "cube-button": "Cube",
+    "sphere-button": "Sphere",
+    "cylinder-button": "Cylinder",
+    "cone-button": "Cone",
+    "rectangular-prism-button": "Rectangular Prism",
+    "pyramid-button": "Pyramid",
+    "triangular-prism-button": "Triangular Prism",
+    "hexagonal-prism-button": "Hexagonal Prism",
+    "pentagonal-prism-button": "Pentagonal Prism",
+    "ellipsoid-button": "Ellipsoid",
+    "torus-button": "Torus",
+    "octahedron-button": "Octahedron",
+    "tetrahedron-button": "Tetrahedron",
+    "dodecahedron": "Dodecahedron",
+    "icosahedron-button": "Icosahedron",
+    "frustrum-button": "Frustrum",
+    "bipyramid-button": "Bipyramid",
+    "antiprism-button": "Antiprism",
+    "star-button": "Star",
+    "heart-button": "Heart",
+    "crescent-button": "Crescent",
+    "spiral-button": "Spiral",
+};
+
+// Control current shape heading
+let currentShapeHeading = document.getElementById("current-shape-heading");
+
+// Handle shape buttons when clicked. Change button color and active shape
+const shapeButtons = document.querySelectorAll(".shape-button");
+shapeButtons.forEach((shapeButton) => {
+    shapeButton.addEventListener("click", () => {
+        console.log(`${shapeButton.id} was clicked`);
+
+        // Update current shape heading
+        currentShapeHeading.textContent = `Current Shape: ${shapeMappingHeading[shapeButton.id]}`;
+
+        // Set all buttons to red
+        shapeButtons.forEach((button) => {
+            button.style.background = "#D94E4E";
+        });
+
+        // Set the clicked button to green
+        shapeButton.style.background = "#4CAF50";
+
+        // Update active shape
+        const newShape = shapeMapping[shapeButton.id];
+        if (activeShape) {
+            scene.remove(activeShape);
+        }
+        activeShape = newShape;
+        scene.add(activeShape);
+
+        renderer.render(scene, camera);
+    });
+});

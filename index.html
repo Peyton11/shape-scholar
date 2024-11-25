@@ -16,16 +16,18 @@
     <h1>Shape Scholar</h1>
     <h2 id="current-shape-heading">Current Shape: Cube</h2>
 
-    <!-- Control buttons -->
-    <button id="toggle-menu-button">Toggle Menu</button>
-    <button id="change-view-button" class="button">Change View</button>
-    <button id="toggle-shading-button" class="button">Toggle Shading</button>
-    <button id="toggle-textures-button" class="button">Toggle Textures</button>
-    <button id="spin-forward-button" class="button">Spin Forward</button>
-    <button id="spin-backward-button" class="button">Spin Backward</button>
-    <button id="spin-upward-button" class="button">Spin Upward</button>
-    <button id="spin-downward-button" class="button">Spin Downward</button>
-    <button id="show-keybinds-button" class="button">Show Keybinds</button>
+    <div id="menu">
+        <!-- Control buttons -->
+        <button id="toggle-menu-button">Toggle Menu</button>
+        <button id="change-view-button" class="menu-button">Change View</button>
+        <button id="toggle-shading-button" class="menu-button">Toggle Shading</button>
+        <button id="toggle-textures-button" class="menu-button">Toggle Textures</button>
+        <button id="spin-forward-button" class="menu-button">Spin Forward</button>
+        <button id="spin-backward-button" class="menu-button">Spin Backward</button>
+        <button id="spin-upward-button" class="menu-button">Spin Upward</button>
+        <button id="spin-downward-button" class="menu-button">Spin Downward</button>
+        <button id="show-keybinds-button" class="menu-button">Show Keybinds</button>
+    </div>
 
     <!-- List of keybinds -->
     <ul id="keybind-list">
@@ -37,5 +39,31 @@
         <li>Spin Upward: <strong>W</strong></li>
         <li>Spin Downward: <strong>S</strong></li>
     </ul>
+
+    <div id="shape-menu">
+        <button id="cube-button" class="shape-button">Cube</button>
+        <button id="sphere-button" class="shape-button">Sphere</button>
+        <button id="cylinder-button" class="shape-button">Cylinder</button>
+        <button id="cone-button" class="shape-button">Cone</button>
+        <button id="rectangular-prism-button" class="shape-button">Rectangular Prism</button>
+        <button id="pyramid-button" class="shape-button">Pyramid</button>
+        <button id="triangular-prism-button" class="shape-button">Triangular Prism</button>
+        <button id="hexagonal-prism-button" class="shape-button">Hexagonal Prism</button>
+        <button id="pentagonal-prism-button" class="shape-button">Pentagonal Prism</button>
+        <button id="ellipsoid-button" class="shape-button">Ellipsoid</button>
+        <button id="torus-button" class="shape-button">Torus</button>
+        <button id="octahedron-button" class="shape-button">Octahedron</button>
+        <button id="tetrahedron-button" class="shape-button">Tetrahedron</button>
+        <button id="dodecahedron" class="shape-button">Dodecahedron</button>
+        <button id="icosahedron-button" class="shape-button">Icosahedron</button>
+        <button id="frustrum-button" class="shape-button">Frustrum</button>
+        <button id="bipyramid-button" class="shape-button">Bipyramid</button>
+        <button id="antiprism-button" class="shape-button">Antiprism</button>
+        <button id="star-button" class="shape-button">Star</button>
+        <button id="heart-button" class="shape-button">Heart</button>
+        <button id="crescent-button" class="shape-button">Crescent</button>
+        <button id="spiral-button" class="shape-button">Spiral</button>
+    </div>
+
 </body>
 </html>
