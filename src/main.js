@@ -25,6 +25,7 @@ import { createEllipsoid } from "./shapes/ellipsoid.js";
 import { createTorus } from "./shapes/torus.js";
 import { createOctahedron } from "./shapes/octahedron.js";
 import { createTetrahedron } from "./shapes/tetrahedron.js";
+import { createDodecahedron} from "./shapes/dodecahedron.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -74,6 +75,7 @@ let ellipsoid = createEllipsoid();
 let torus = createTorus();
 let octahedron = createOctahedron();
 let tetrahedron = createTetrahedron();
+let dodecahedron = createDodecahedron();
 
 // Only one shape is allowed at once
 let activeShape = cube;
@@ -356,7 +358,7 @@ const shapeMapping = {
     "torus-button": torus,
     "octahedron-button": octahedron,
     "tetrahedron-button": tetrahedron,
-    "dodecahedron": "dodecahedron",
+    "dodecahedron": dodecahedron,
     "icosahedron-button": "icosahedron",
     "frustrum-button": "frustrum",
     "antiprism-button": "antiprism",
