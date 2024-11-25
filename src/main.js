@@ -24,6 +24,7 @@ import { createNonagonalPrism } from "./shapes/nonagonal-prism.js";
 import { createEllipsoid } from "./shapes/ellipsoid.js";
 import { createTorus } from "./shapes/torus.js";
 import { createOctahedron } from "./shapes/octahedron.js";
+import { createTetrahedron } from "./shapes/tetrahedron.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -72,6 +73,7 @@ let nonagonalPrism = createNonagonalPrism();
 let ellipsoid = createEllipsoid();
 let torus = createTorus();
 let octahedron = createOctahedron();
+let tetrahedron = createTetrahedron();
 
 // Only one shape is allowed at once
 let activeShape = cube;
@@ -353,7 +355,7 @@ const shapeMapping = {
     "ellipsoid-button": ellipsoid,
     "torus-button": torus,
     "octahedron-button": octahedron,
-    "tetrahedron-button": "tetrahedron",
+    "tetrahedron-button": tetrahedron,
     "dodecahedron": "dodecahedron",
     "icosahedron-button": "icosahedron",
     "frustrum-button": "frustrum",
