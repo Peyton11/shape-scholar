@@ -357,8 +357,6 @@ const shapeMapping = {
     "antiprism-button": "antiprism",
     "star-button": star,
     "heart-button": heart,
-    "crescent-button": "crescent",
-    "spiral-button": "spiral",
 };
 
 // Map shape-button IDs to modify #current-shape-heading
@@ -386,8 +384,6 @@ const shapeMappingHeading = {
     "antiprism-button": "Antiprism",
     "star-button": "Star",
     "heart-button": "Heart",
-    "crescent-button": "Crescent",
-    "spiral-button": "Spiral",
 };
 
 // Control current shape heading
