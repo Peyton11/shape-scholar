@@ -20,6 +20,7 @@ import { createHexagonalPrism } from "./shapes/hexagonal-prism.js";
 import { createPentagonalPrism } from "./shapes/pentagonal-prism.js";
 import { createHeptagonalPrism } from "./shapes/heptagonal-prism.js";
 import { createOctagonalPrism } from "./shapes/octagonal-prism.js";
+import { createNonagonalPrism } from "./shapes/nonagonal-prism.js";
 import { enablePhongShading, disablePhongShading } from "./utils.js";
 
 // Create the scene
@@ -64,6 +65,7 @@ let pentagonalPrism = createPentagonalPrism();
 let hexagonalPrism = createHexagonalPrism();
 let heptagonalPrism = createHeptagonalPrism();
 let octagonalPrism = createOctagonalPrism();
+let nonagonalPrism = createNonagonalPrism();
 
 // Only one shape is allowed at once
 let activeShape = cube;
@@ -341,6 +343,7 @@ const shapeMapping = {
     "hexagonal-prism-button": hexagonalPrism,
     "heptagonal-prism-button": heptagonalPrism,
     "octagonal-prism-button": octagonalPrism,
+    "nonagonal-prism-button": nonagonalPrism,
     "ellipsoid-button": "ellipsoid",
     "torus-button": "torus",
     "octahedron-button": "octahedron",
@@ -369,6 +372,7 @@ const shapeMappingHeading = {
     "hexagonal-prism-button": "Hexagonal Prism",
     "heptagonal-prism-button": "Heptagonal Prism",
     "octagonal-prism-button": "Octagonal Prism",
+    "nonagonal-prism-button": "Nonogonal Prism",
     "ellipsoid-button": "Ellipsoid",
     "torus-button": "Torus",
     "octahedron-button": "Octahedron",
