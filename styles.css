@@ -156,12 +156,12 @@ p {
 
 #learn-shapes-link {
     position: fixed;
-    bottom: 0;
+    bottom: 20px;
     font-family: 'Arial', sans-serif;
 }
 
 #quiz-shapes-link {
     position: fixed;
-    bottom: 20px;
+    bottom: 0;
     font-family: 'Arial', sans-serif;
 }
