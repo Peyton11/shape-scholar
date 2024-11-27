@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/star.js
+// threejs/shapes/star.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

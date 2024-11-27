@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/sphere.js
+// threejs/shapes/sphere.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

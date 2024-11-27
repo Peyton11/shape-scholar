@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/heart.js
+// threejs/shapes/heart.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

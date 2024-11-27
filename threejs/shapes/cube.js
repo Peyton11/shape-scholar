@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/cube.js
+// threejs/shapes/cube.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

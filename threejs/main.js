@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/main.js
+// threejs/main.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

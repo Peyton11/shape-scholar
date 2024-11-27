@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/hexagonal-antiprism.js
+// threejs/shapes/hexagonal-antiprism.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

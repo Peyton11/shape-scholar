@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/utils.js
+// threejs/utils.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

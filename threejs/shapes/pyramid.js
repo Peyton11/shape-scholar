@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/pyramid.js
+// threejs/shapes/pyramid.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';

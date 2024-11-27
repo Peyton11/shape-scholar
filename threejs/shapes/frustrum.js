@@ -1,5 +1,5 @@
 // Peyton Gardner
-// src/shapes/frustrum.js
+// threejs/shapes/frustrum.js
 
 // Uncomment the following line for local development:
 // import * as THREE from 'three';
